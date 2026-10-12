@@ -1,0 +1,36 @@
+# Ignore bundler config
+/.bundle
+
+# Ignore all logfiles and tempfiles
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore storage (uploaded files in development and test)
+/storage/*
+!/storage/.keep
+
+# Ignore master key and credentials
+/config/master.key
+/config/credentials/*.key
+
+# Ignore database config secrets — use environment variables in production
+# /config/database.yml  # keep this for reference, but never commit real credentials
+
+# Ignore node_modules if any JS tooling added
+node_modules/
+
+# Ignore test coverage reports
+/coverage/
+
+# Ignore macOS files
+.DS_Store
+
+# Ignore vim/editor files
+*.swp
+*.swo
+
+# Ignore environment files
+.env
+.env.*
