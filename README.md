@@ -38,7 +38,7 @@ Built as part of the Incubyte engineering assessment.
 ## Project Structure
 
 ```
-D:\Incubyte\
+salary-management/
   docs/                        ← Requirements, architecture, tradeoffs, AI usage
   salary_management/           ← Rails API backend
   salary-management-ui/        ← React frontend
