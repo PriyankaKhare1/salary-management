@@ -15,8 +15,8 @@
 /config/master.key
 /config/credentials/*.key
 
-# Ignore database config secrets — use environment variables in production
-# /config/database.yml  # keep this for reference, but never commit real credentials
+# Ignore database config — contains local credentials
+/config/database.yml
 
 # Ignore node_modules if any JS tooling added
 node_modules/
