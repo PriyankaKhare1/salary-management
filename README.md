@@ -8,8 +8,8 @@ Built as part of the Incubyte engineering assessment.
 
 ## Live Demo
 
-- **Frontend:** [Coming soon — Vercel]
-- **Backend API:** [Coming soon — Railway]
+- **Frontend:** [https://salary-management-nljs.vercel.app](https://salary-management-nljs.vercel.app)
+- **Backend API:** [https://salary-management-production-a90a.up.railway.app/api/v1](https://salary-management-production-a90a.up.railway.app/api/v1)
 
 ---
 
