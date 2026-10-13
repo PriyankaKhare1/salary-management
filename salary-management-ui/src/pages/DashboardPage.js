@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
-  ResponsiveContainer, PieChart, Pie, Cell, Legend
+  ResponsiveContainer, PieChart, Pie, Cell
 } from 'recharts';
 import {
   getAnalyticsSummary,
@@ -60,7 +60,6 @@ export default function DashboardPage() {
   }, []);
 
   const totalEmployees = summary.reduce((sum, r) => sum + Number(r.headcount), 0);
-  const totalPayroll = summary.reduce((sum, r) => sum + Number(r.total_payroll), 0);
   const topDept = [...summary].sort((a, b) => b.headcount - a.headcount)[0];
 
   if (loading) return <div className="loading" aria-live="polite">Loading dashboard...</div>;
