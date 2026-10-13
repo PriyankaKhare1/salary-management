@@ -16,13 +16,23 @@ RSpec.describe Salary, type: :model do
     it 'is invalid when amount is zero' do
       salary = build(:salary, amount: 0)
       expect(salary).not_to be_valid
-      expect(salary.errors[:amount]).to include("must be greater than 0")
+      expect(salary.errors[:amount]).to include('must be greater than 0')
     end
 
     it 'is invalid when amount is negative' do
       salary = build(:salary, amount: -5000)
       expect(salary).not_to be_valid
-      expect(salary.errors[:amount]).to include("must be greater than 0")
+      expect(salary.errors[:amount]).to include('must be greater than 0')
+    end
+
+    it 'is valid with the smallest representable positive amount' do
+      salary = build(:salary, amount: 0.01)
+      expect(salary).to be_valid
+    end
+
+    it 'is valid with a very large salary amount' do
+      salary = build(:salary, amount: 999_999_999.99)
+      expect(salary).to be_valid
     end
 
     it 'is invalid without an effective date' do
@@ -42,7 +52,15 @@ RSpec.describe Salary, type: :model do
       create(:salary, employee: employee)
       duplicate = build(:salary, employee: employee)
       expect(duplicate).not_to be_valid
-      expect(duplicate.errors[:employee_id]).to include("already has a salary record")
+      expect(duplicate.errors[:employee_id]).to include('already has a salary record')
+    end
+
+    it 'allows different employees to each have a salary' do
+      emp1 = create(:employee)
+      emp2 = create(:employee)
+      create(:salary, employee: emp1)
+      salary2 = build(:salary, employee: emp2)
+      expect(salary2).to be_valid
     end
   end
 
